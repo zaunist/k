@@ -12,4 +12,5 @@ k use --version=v1.22.0  切换为 v1.22.0 版本的 kubectl
 
 k ls  --列出当前主机上已有的 kubectl 版本
 
-待支持的命令： uninstall、clean、remote
+待支持的命令： remote
+待支持的平台: windows、mac

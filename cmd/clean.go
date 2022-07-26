@@ -5,23 +5,18 @@ DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE Version Nil, December 2022.
 package cmd
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
+
+	"github.com/zaunist/k/pkg/clean"
 )
 
 // cleanCmd represents the clean command
 var cleanCmd = &cobra.Command{
 	Use:   "clean",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "Clean all resource you download",
+	Long:  `use k clean to delete all resource you download`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("clean called")
+		clean.Do()
 	},
 }
 

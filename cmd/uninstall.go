@@ -5,29 +5,24 @@ DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE Version Nil, December 2022.
 package cmd
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
+	"github.com/zaunist/k/pkg/uninstall"
 )
 
 // uninstallCmd represents the uninstall command
 var uninstallCmd = &cobra.Command{
 	Use:   "uninstall",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "Uninstall kubectl version",
+	Long:  `use k uninstall --version=v1.23.0 to uninstall kubectl`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("uninstall called")
+		uninstall.Do(version)
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(uninstallCmd)
 
+	uninstallCmd.Flags().StringVar(&version, "version", "", "The kubectl version you want uninstall")
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command

@@ -25,12 +25,10 @@ func use(version string) {
 		return
 	}
 
-	err := os.Remove(symlink)
-	if err != nil {
+	if err := os.Remove(symlink); err != nil {
 		log.Println("delete old symlink failed")
 	}
-	err = os.Symlink(targetVersion, symlink)
-	if err != nil {
+	if err := os.Symlink(targetVersion, symlink); err != nil {
 		log.Fatalf(err.Error())
 	}
 	fmt.Println("Use ", version)

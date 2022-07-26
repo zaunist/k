@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"path/filepath"
 
 	"github.com/zaunist/k/pkg/conf"
 	"github.com/zaunist/k/pkg/use"
@@ -16,10 +17,10 @@ func Do(version string) {
 
 func install(version string) {
 	address := "https://dl.k8s.io/release/" + version + "/bin/linux/amd64/kubectl"
-	path := conf.VersonDir + version + "/"
+	path := filepath.Join(conf.VersonDir, version)
 
 	os.MkdirAll(path, os.ModePerm)
-	f, err := os.OpenFile(path+"kubectl", os.O_CREATE|os.O_WRONLY, 0755)
+	f, err := os.OpenFile(filepath.Join(path, "kubectl"), os.O_CREATE|os.O_WRONLY, 0755)
 	if err != nil {
 		log.Fatalf("dowanload error: %v", err)
 	}
