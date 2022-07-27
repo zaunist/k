@@ -1,8 +1,7 @@
 package conf
 
 import (
-	"log"
-	"os/user"
+	"os"
 )
 
 var (
@@ -12,12 +11,7 @@ var (
 )
 
 func Init() {
-	u, err := user.Current()
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	baseDir = u.HomeDir
+	baseDir = os.Getenv("HOME")
 	VersonDir = baseDir + "/.k/versions/"
 	BinDir = baseDir + "/.k/bin/"
 }
