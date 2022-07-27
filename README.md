@@ -1,16 +1,36 @@
-# k
+# K - Kubectl version manager
 
-> 当访问不同版本的 k8s 的时候，官方的建议是 kubectl 也要跟着版本走，所以在需要操作多个跨大版本的集群时，切换 kubectl 就比较麻烦，这个工具也是因此诞生。
+English|[简体中文](README.zh.md)
 
-K 是一个用于管理 kubectl 版本的工具，可以使用它下载对应版本的 kubectl，支持使用 k use 切换至想要的版本。
+## Overview
 
-## 用法
+K is used to manage kubectl version, ff you need to control k8s across large versions(v1.18 and v1.23), then this is the right tool for you.
 
-k install --version=v1.23.0  安装 v1.23.0 版本的 kubectl
+## Getting Started
 
-k use --version=v1.22.0  切换为 v1.22.0 版本的 kubectl
+```shell
+git clone https://github.com/zaunist/k.git
+go build main.go
+```
 
-k ls  --列出当前主机上已有的 kubectl 版本
+Place the "k" binary to your PATH.
 
-待支持的命令： remote
-待支持的平台: windows、mac
+## Usage
+
+Support command:
+
+1. k install
+2. k uninstall
+3. k use
+4. k ls
+5. k clean
+6. k help
+7. k version
+
+## Reference
+
+[g](https://github.com/voidint/g) - Golang version manager
+
+## License
+
+What the fuck you want to public licence.
