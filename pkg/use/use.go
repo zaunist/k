@@ -15,7 +15,9 @@ func Do(version string) {
 
 func use(version string) {
 	path := conf.BinDir
-	os.MkdirAll(path, 0755)
+	if err := os.MkdirAll(path, 0755); err != nil {
+		log.Printf("create directory failed: %v", err)
+	}
 	targetVersion := filepath.Join(conf.VersonDir, version, "kubectl")
 
 	symlink := filepath.Join(path, "kubectl")

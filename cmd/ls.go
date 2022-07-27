@@ -11,8 +11,6 @@ import (
 	"github.com/zaunist/k/pkg/ls"
 )
 
-var versionDir = "./.k/versions/"
-
 // lsCmd represents the ls command
 var lsCmd = &cobra.Command{
 	Use:   "ls",
