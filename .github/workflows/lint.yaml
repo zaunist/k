@@ -15,7 +15,7 @@ jobs:
       - run: npm install -g markdownlint-cli@0.25.0
       - run: markdownlint '**/*.md' --ignore node_modules
   misspell:
-    name:  💼 misspell
+    name: 💼 misspell
     runs-on: ubuntu-latest
     steps:
       - name: Check out code.
