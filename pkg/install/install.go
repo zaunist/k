@@ -13,7 +13,10 @@ import (
 	"github.com/zaunist/k/pkg/use"
 )
 
-var address string
+var (
+	address string
+	f       *os.File
+)
 
 func Do(version string) {
 	install(version)
@@ -34,11 +37,19 @@ func install(version string) {
 		log.Printf("create directory failed: %v", err)
 	}
 
-	f, err := os.OpenFile(filepath.Join(path, "kubectl"), os.O_CREATE|os.O_WRONLY, 0755)
-	if err != nil {
-		log.Fatalf("dowanload error: %v", err)
+	if runtime.GOOS == "windows" {
+		f, err := os.OpenFile(filepath.Join(path, "kubectl.exe"), os.O_CREATE|os.O_WRONLY, 0755)
+		if err != nil {
+			log.Fatalf("dowanload error: %v", err)
+		}
+		defer f.Close()
+	} else {
+		f, err := os.OpenFile(filepath.Join(path, "kubectl"), os.O_CREATE|os.O_WRONLY, 0755)
+		if err != nil {
+			log.Fatalf("dowanload error: %v", err)
+		}
+		defer f.Close()
 	}
-	defer f.Close()
 
 	resp, err := http.Get(address)
 	if err != nil {
