@@ -33,20 +33,21 @@ func install(version string) {
 	}
 	path := filepath.Join(conf.VersonDir, version)
 
-	if err := os.MkdirAll(path, os.ModePerm); err != nil {
+	err := os.MkdirAll(path, os.ModePerm)
+	if err != nil {
 		log.Printf("create directory failed: %v", err)
 	}
 
 	if runtime.GOOS == "windows" {
-		f, err := os.OpenFile(filepath.Join(path, "kubectl.exe"), os.O_CREATE|os.O_WRONLY, 0755)
+		f, err = os.OpenFile(filepath.Join(path, "kubectl.exe"), os.O_CREATE|os.O_WRONLY, 6)
 		if err != nil {
-			log.Fatalf("dowanload error: %v", err)
+			log.Fatalf("open file error: %v", err)
 		}
 		defer f.Close()
 	} else {
-		f, err := os.OpenFile(filepath.Join(path, "kubectl"), os.O_CREATE|os.O_WRONLY, 0755)
+		f, err = os.OpenFile(filepath.Join(path, "kubectl"), os.O_CREATE|os.O_WRONLY, 0755)
 		if err != nil {
-			log.Fatalf("dowanload error: %v", err)
+			log.Fatalf("open file error: %v", err)
 		}
 		defer f.Close()
 	}
@@ -58,7 +59,7 @@ func install(version string) {
 	defer resp.Body.Close()
 
 	if _, err := io.Copy(f, resp.Body); err != nil {
-		log.Fatalf("download error: %v", err)
+		log.Fatalf("save file error: %v", err)
 	}
 
 	use.Do(version)
