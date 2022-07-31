@@ -9,23 +9,46 @@ K is used to manage kubectl version, ff you need to control k8s across large ver
 ## Getting Started
 
 ```shell
-git clone https://github.com/zaunist/k.git
-go build main.go
+go install github.com/zaunist/k@latest
 ```
 
-Place the "k" binary to your PATH.
+Download in [release page](https://github.com/zaunist/k/releases)
 
 ## Usage
 
-Support command:
+```
+k is used to manage kubectl version.
 
-1. k install
-2. k uninstall
-3. k use
-4. k ls
-5. k clean
-6. k help
-7. k version
+Usage:
+  k [command]
+
+Available Commands:
+  clean       Clean all resource you download
+  completion  Generate the autocompletion script for the specified shell
+  help        Help about any command
+  install     install special kubectl version with --version
+  ls          ls local kubectl version
+  remote      Get the official available kubectl versions
+  uninstall   Uninstall kubectl version
+  use         use special version kubectl
+  version     The K version
+
+Flags:
+  -h, --help   help for k
+
+Use "k [command] --help" for more information about a command.
+
+```
+
+k install --version=v1.23.0  install v1.23.0 version
+
+k use --version=v1.22.0  switch kubectl version to v1.22.0
+
+k ls   list all installed version on your system
+
+### Note:
+
+> **remote  command is not support now**
 
 ## Reference
 
