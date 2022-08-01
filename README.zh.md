@@ -24,7 +24,6 @@ Available Commands:
   help        Help about any command
   install     install special kubectl version with --version
   ls          ls local kubectl version
-  remote      Get the official available kubectl versions
   uninstall   Uninstall kubectl version
   use         use special version kubectl
   version     The K version
@@ -42,12 +41,10 @@ k use --version=v1.22.0  切换为 v1.22.0 版本的 kubectl
 
 k ls  --列出当前主机上已有的 kubectl 版本
 
-待支持的命令： remote    获取所有的 kubectl 版本
-
 ## 参考
 
 [g](https://github.com/voidint/g) - Golang version manager
 
 ## 许可证
 
-What the fuck you want to public licence.
+[WTFPL license](LICENSE)

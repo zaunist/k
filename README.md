@@ -28,7 +28,6 @@ Available Commands:
   help        Help about any command
   install     install special kubectl version with --version
   ls          ls local kubectl version
-  remote      Get the official available kubectl versions
   uninstall   Uninstall kubectl version
   use         use special version kubectl
   version     The K version
@@ -46,14 +45,10 @@ k use --version=v1.22.0  switch kubectl version to v1.22.0
 
 k ls   list all installed version on your system
 
-### Note:
-
-> **remote  command is not support now**
-
 ## Reference
 
-[g](https://github.com/voidint/g) - Golang version manager
+This project inspire by [g](https://github.com/voidint/g) - Golang version manager
 
 ## License
 
-What the fuck you want to public licence.
+[WTFPL license](LICENSE)
