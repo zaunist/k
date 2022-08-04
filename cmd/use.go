@@ -15,8 +15,9 @@ var useCmd = &cobra.Command{
 	Use:   "use",
 	Short: "use special version kubectl",
 	Long:  `use special version kubectl`,
+	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		use.Do(version)
+		use.Do(args[0])
 	},
 }
 

@@ -39,11 +39,11 @@ Use "k [command] --help" for more information about a command.
 
 ```
 
-k install --version=v1.23.0  install v1.23.0 version
+k install v1.23.0  install v1.23.0 version
 
-k use --version=v1.22.0  switch kubectl version to v1.22.0
+k use v1.22.0  switch kubectl version to v1.22.0
 
-k ls   list all installed version on your system
+k ls  list all installed version on your system
 
 ## Reference
 

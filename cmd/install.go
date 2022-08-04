@@ -16,8 +16,9 @@ var installCmd = &cobra.Command{
 	Use:   "install",
 	Short: "install special kubectl version with --version",
 	Long:  `install special kubectl version with --version`,
+	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		install.Do(version)
+		install.Do(args[0])
 	},
 }
 

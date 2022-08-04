@@ -35,11 +35,11 @@ Use "k [command] --help" for more information about a command.
 
 ```
 
-k install --version=v1.23.0  安装 v1.23.0 版本的 kubectl
+k install v1.23.0  安装 v1.23.0 版本的 kubectl
 
-k use --version=v1.22.0  切换为 v1.22.0 版本的 kubectl
+k use v1.22.0  切换为 v1.22.0 版本的 kubectl
 
-k ls  --列出当前主机上已有的 kubectl 版本
+k ls  列出当前主机上已有的 kubectl 版本
 
 ## 参考
 

@@ -13,9 +13,10 @@ import (
 var uninstallCmd = &cobra.Command{
 	Use:   "uninstall",
 	Short: "Uninstall kubectl version",
+	Args:  cobra.ExactArgs(1),
 	Long:  `use k uninstall --version=v1.23.0 to uninstall kubectl`,
 	Run: func(cmd *cobra.Command, args []string) {
-		uninstall.Do(version)
+		uninstall.Do(args[0])
 	},
 }
 
