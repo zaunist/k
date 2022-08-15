@@ -2,6 +2,7 @@ package use
 
 import (
 	"fmt"
+	version2 "github.com/zaunist/k/pkg/version"
 	"log"
 	"os"
 	"os/exec"
@@ -12,7 +13,12 @@ import (
 )
 
 func Do(version string) {
-	use(version)
+	v := version2.NormalizedBuildVersion(version)
+	if v == "" {
+		log.Fatalf("Proviede version is invalid, please check again")
+		return
+	}
+	use(v)
 }
 
 func use(version string) {

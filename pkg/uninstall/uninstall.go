@@ -2,6 +2,7 @@ package uninstall
 
 import (
 	"fmt"
+	version2 "github.com/zaunist/k/pkg/version"
 	"io/ioutil"
 	"log"
 	"os"
@@ -11,7 +12,12 @@ import (
 )
 
 func Do(version string) {
-	uninstall(version)
+	v := version2.NormalizedBuildVersion(version)
+	if v == "" {
+		log.Fatalf("Proviede version is invalid, please check again")
+		return
+	}
+	uninstall(v)
 }
 
 func uninstall(version string) {

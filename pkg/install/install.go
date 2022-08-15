@@ -2,6 +2,7 @@ package install
 
 import (
 	"fmt"
+	version2 "github.com/zaunist/k/pkg/version"
 	"io"
 	"log"
 	"net/http"
@@ -19,7 +20,12 @@ var (
 )
 
 func Do(version string) {
-	install(version)
+	v := version2.NormalizedBuildVersion(version)
+	if v == "" {
+		log.Fatalf("Proviede version is invalid, please check again")
+		return
+	}
+	install(v)
 }
 
 func install(version string) {
