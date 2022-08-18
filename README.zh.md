@@ -47,4 +47,4 @@ k ls  列出当前主机上已有的 kubectl 版本
 
 ## 许可证
 
-[WTFPL license](LICENSE)
+[WTFPL license](http://www.wtfpl.net/about/)

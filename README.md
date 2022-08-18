@@ -51,4 +51,4 @@ This project inspire by [g](https://github.com/voidint/g) - Golang version manag
 
 ## License
 
-[WTFPL license](LICENSE)
+[WTFPL license](http://www.wtfpl.net/about/)
