@@ -4,7 +4,7 @@
 
 ## Overview
 
-K is used to manage kubectl version, ff you need to control k8s across large versions(v1.18 and v1.23), then this is the right tool for you.
+K is used to manage kubectl version, if you need to control k8s across large versions(v1.18 and v1.23), then this is the right tool for you.
 
 ## Getting Started
 
@@ -26,7 +26,7 @@ Available Commands:
   clean       Clean all resource you download
   completion  Generate the autocompletion script for the specified shell
   help        Help about any command
-  install     install special kubectl version with --version
+  install     install special kubectl version
   ls          ls local kubectl version
   uninstall   Uninstall kubectl version
   use         use special version kubectl
@@ -39,11 +39,16 @@ Use "k [command] --help" for more information about a command.
 
 ```
 
-k install v1.23.0  install v1.23.0 version
+example:
 
-k use v1.22.0  switch kubectl version to v1.22.0
+```
+k install v1.23.0  // install v1.23.0 version
 
-k ls  list all installed version on your system
+k use v1.22.0 //  switch kubectl version to v1.22.0
+
+k ls // list all installed version on your system
+
+```
 
 ## Reference
 
