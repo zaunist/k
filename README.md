@@ -8,11 +8,17 @@ K is used to manage kubectl version, if you need to control k8s across large ver
 
 ## Getting Started
 
+### manual
+
 ```shell
 go install github.com/zaunist/k@latest
 ```
 
-Download in [release page](https://github.com/zaunist/k/releases)
+### auto
+
+```shell
+curl -sSL https://raw.githubusercontent.com/zaunist/k/master/install.sh | bash
+```
 
 ## Usage
 
@@ -39,7 +45,7 @@ Use "k [command] --help" for more information about a command.
 
 ```
 
-example:
+## example
 
 ```
 k install v1.23.0  // install v1.23.0 version
@@ -52,7 +58,7 @@ k ls // list all installed version on your system
 
 ## Reference
 
-This project inspire by [g](https://github.com/voidint/g) - Golang version manager
+The project is inspired by [g](https://github.com/voidint/g) - Golang version manager
 
 ## License
 

@@ -6,8 +6,16 @@ K 是一个用于管理 kubectl 版本的工具，可以使用它下载对应版
 
 ## 安装
 
+### 手动安装
+
 ```
 go install github.com/zaunist/k@latest
+```
+
+### 自动化安装
+
+```shell
+curl -sSL https://raw.githubusercontent.com/zaunist/k/master/install.sh | bash
 ```
 
 ## 用法
@@ -35,11 +43,15 @@ Use "k [command] --help" for more information about a command.
 
 ```
 
+## 示例
+
+```shell
 k install v1.23.0  安装 v1.23.0 版本的 kubectl
 
 k use v1.22.0  切换为 v1.22.0 版本的 kubectl
 
 k ls  列出当前主机上已有的 kubectl 版本
+```
 
 ## 参考
 
