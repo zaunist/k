@@ -1,4 +1,4 @@
-# K - Kubectl version manager
+# K - Kubectl Version Manager
 
 [English](README.md) | [简体中文](README.zh.md)
 
