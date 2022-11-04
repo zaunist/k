@@ -14,8 +14,8 @@ import (
 // lsCmd represents the ls command
 var lsCmd = &cobra.Command{
 	Use:   "ls",
-	Short: "ls local kubectl version",
-	Long:  `ls local kubectl version`,
+	Short: "List installed versions",
+	Long:  `List installed versions`,
 	Run: func(cmd *cobra.Command, args []string) {
 		ls.List(conf.VersonDir)
 	},
@@ -23,14 +23,4 @@ var lsCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(lsCmd)
-
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// lsCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// lsCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }

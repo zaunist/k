@@ -29,13 +29,12 @@ Usage:
   k [command]
 
 Available Commands:
-  clean       Clean all resource you download
-  completion  Generate the autocompletion script for the specified shell
+  clean       Remove files from the package download directory
   help        Help about any command
-  install     install special kubectl version
-  ls          ls local kubectl version
-  uninstall   Uninstall kubectl version
-  use         use special version kubectl
+  install     Download and install a version
+  ls          List installed versions
+  uninstall   Uninstall a version of kubectl
+  use         Switch to specified version
   version     The K version
 
 Flags:

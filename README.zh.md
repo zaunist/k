@@ -27,13 +27,12 @@ Usage:
   k [command]
 
 Available Commands:
-  clean       Clean all resource you download
-  completion  Generate the autocompletion script for the specified shell
+  clean       Remove files from the package download directory
   help        Help about any command
-  install     install special kubectl version with --version
-  ls          ls local kubectl version
-  uninstall   Uninstall kubectl version
-  use         use special version kubectl
+  install     Download and install a version
+  ls          List installed versions
+  uninstall   Uninstall a version of kubectl
+  use         Switch to specified version
   version     The K version
 
 Flags:
@@ -46,11 +45,11 @@ Use "k [command] --help" for more information about a command.
 ## 示例
 
 ```shell
-k install v1.23.0  安装 v1.23.0 版本的 kubectl
+k install v1.23.0  // 安装 v1.23.0 版本的 kubectl
 
-k use v1.22.0  切换为 v1.22.0 版本的 kubectl
+k use v1.22.0 // 切换为 v1.22.0 版本的 kubectl
 
-k ls  列出当前主机上已有的 kubectl 版本
+k ls  // 列出当前主机上已安装 kubectl 版本
 ```
 
 ## 参考
