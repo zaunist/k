@@ -16,7 +16,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "k",
 	Short: "A kubectl version manager",
-	Long:  `k is used to manage kubectl version.`,
+	Long:  `K is used to manage kubectl version.`,
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.
