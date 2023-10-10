@@ -26,11 +26,11 @@ function get_arch() {
 }
 
 function get_os() {
-    echo $(uname -s | awk '{print tolower($0)}')
+     echo $(uname -s | awk '{print tolower($0)}')
 }
 
 main() {
-    local release="0.3.0"
+    local release="0.3.1"
     local os=$(get_os)
     local arch=$(get_arch)
     local dest_file="${HOME}/k_${release}_${os}_${arch}.tar.gz"
@@ -44,10 +44,10 @@ main() {
         curl -s -S -L -o "${dest_file}" "${url}"
     fi
 
-    echo "[2/3] Install k to the ${HOME}/bin"
-    mkdir -p "${HOME}/bin"
-    tar -xz -f "${dest_file}" -C "${HOME}/bin"
-    chmod +x "${HOME}/bin/k"
+    echo "[2/3] Install k to the ${HOME}/.k/bin"
+    mkdir -p "${HOME}/.k/bin"
+    tar -xz -f "${dest_file}" -C "${HOME}/.k/bin"
+    chmod +x "${HOME}/.k/bin/k"
 
     echo "[3/3] Set environment variables"
     if [ -x "$(command -v bash)" ]; then
@@ -59,7 +59,7 @@ main() {
 
     if [ -x "$(command -v zsh)" ]; then
         cat >>${HOME}/.zshrc <<-'EOF'
-		# ===== set g environment variables =====
+		# ===== set k environment variables =====
 		export PATH="${HOME}/.k/bin:$PATH"
 		EOF
     fi
