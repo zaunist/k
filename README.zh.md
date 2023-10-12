@@ -22,7 +22,7 @@ go install github.com/zaunist/k@latest
 ### 自动化安装
 
 ```shell
-curl -sSL https://raw.githubusercontent.com/zaunist/k/master/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/zaunist/k/main/install.sh | bash
 ```
 
 ## 用法
