@@ -64,6 +64,10 @@ main() {
 		EOF
     fi
 
+    echo "Reopen your terminal for use K,if you want to use it immediately,"
+    echo "try to execute the follow command in your terminal"
+    echo "source .bashrc"
+    echo "source .zshrc"
     exit 0
 }
 
