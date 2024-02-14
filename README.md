@@ -24,7 +24,7 @@ go install github.com/zaunist/k@latest
 ### auto
 
 ```shell
-curl -sSL https://raw.githubusercontent.com/zaunist/k/main/install.sh | bash
+curl -sSL https://mirror.ghproxy.com/https://raw.githubusercontent.com/zaunist/k/main/install.sh | bash
 ```
 
 ## Usage

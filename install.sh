@@ -34,7 +34,7 @@ main() {
     local os=$(get_os)
     local arch=$(get_arch)
     local dest_file="${HOME}/k_${release}_${os}_${arch}.tar.gz"
-    local url="https://github.com/zaunist/k/releases/download/v${release}/k_${release}_${os}_${arch}.tar.gz"
+    local url="https://mirror.ghproxy.com/https://github.com/zaunist/k/releases/download/v${release}/k_${release}_${os}_${arch}.tar.gz"
 
     echo "[1/3] Downloading ${url}"
     rm -f "${dest_file}"
