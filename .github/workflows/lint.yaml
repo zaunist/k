@@ -5,7 +5,7 @@ on: [pull_request, push]
 jobs:
   markdownlint:
     name: 🍇 Markdown
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: 🚀 Use Node.js
@@ -16,7 +16,7 @@ jobs:
       - run: markdownlint '**/*.md' --ignore node_modules
   misspell:
     name: 💼 misspell
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Check out code.
         uses: actions/checkout@v4
@@ -31,7 +31,7 @@ jobs:
           find web/src web/cypress -type f | xargs ./misspell -error
   yamllint:
     name: 🍏 YAML
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -48,14 +48,14 @@ jobs:
           yamllint --strict .
   trailing-whitespace:
     name: 🐞 Trailing whitespace
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Check for trailing whitespace
         run: "! git grep -EIn $'[ \t]+$'"
   golangci:
     name: 🐯 golangci-lint
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: golangci-lint
@@ -64,7 +64,7 @@ jobs:
           version: latest
           args: --tests=false
   gofmt:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     name: 🐔 gofmt
     steps:
       - uses: actions/checkout@v4
