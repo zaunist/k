@@ -27,7 +27,7 @@ jobs:
         name: Set up Go
         uses: actions/setup-go@v6
         with:
-          go-version: 1.18
+          go-version: 1.24
       -
         name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v6
@@ -35,7 +35,7 @@ jobs:
           # either 'goreleaser' (default) or 'goreleaser-pro'
           distribution: goreleaser
           version: latest
-          args: release --rm-dist
+          args: release --clean
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE }}
           # Your GoReleaser Pro key, if you are using the 'goreleaser-pro' distribution
